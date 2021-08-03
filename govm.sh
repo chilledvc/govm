@@ -75,10 +75,34 @@ main() {
 
       list
     ;;
+    "help")
+      if [[ $# -ne 1 ]]; then
+        echo "usage: govm help"
+        exit
+      fi
+
+      help
+    ;;
     *)
       errecho "unrecognized command: $1"
     ;;
   esac
+}
+
+# help will display a help menu outlining the commands that govm can run.
+help() {
+  cat <<- "EOF"
+usage: govm <command>
+
+govm supports four distinct operations, these are:
+    install   Install a new version of Go
+    remove    Remove an existing Go install
+    set       Set the install of Go to bind to $PATH
+    list      List all the currently installed versions of Go
+
+Running any of these commands without necessary parameters will provided a
+prompt indicating how to use the command correctly.
+EOF
 }
 
 # set will set the given version of Go to be the current version that will be
