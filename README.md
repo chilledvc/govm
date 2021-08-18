@@ -31,8 +31,8 @@ Once the `setup.sh` script has run, restart your terminal for the updates to
 `PATH` to take effect.
 
 ## Usage
-govm expects one of 4 commands, [`install`](###install), [`remove`](###remove),
-[`set`](###set), and [`list`](###list).
+govm expects one of 4 commands, [`install`](#install), [`remove`](#remove),
+[`set`](#set), and [`list`](#list).
 
 ### Install
 The `install` command will create a new Workspace, and install the indicated
