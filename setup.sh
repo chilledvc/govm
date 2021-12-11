@@ -28,11 +28,15 @@ fi
 infecho "copying govm.sh into /usr/local/bin/ as govm"
 cp ./govm.sh /usr/local/bin/govm
 
+# Get the home directory of the user that called the script
+home=$(eval echo "~$SUDO_USER")
+
 # Append necessary lines to .5c6einit to update PATH and GOPATH
 infecho "modifying .5c6einit to update PATH and GOPATH"
-echo 'export GOPATH="$HOME/go/current"' >> "$HOME/.5c6einit"
-echo 'export PATH="$HOME/.govm/current/bin:$PATH"' >> "$HOME/.5c6einit"
-echo 'export PATH="$GOPATH/bin:$PATH"' >> "$HOME/.5c6einit"
+touch "$home/.5c6einit"
+echo 'export GOPATH="$HOME/go/current"' >> "$home/.5c6einit"
+echo 'export PATH="$HOME/.govm/current/bin:$PATH"' >> "$home/.5c6einit"
+echo 'export PATH="$GOPATH/bin:$PATH"' >> "$home/.5c6einit"
 
 # Notify the user that setup has completed
 sucecho "setup completed"
