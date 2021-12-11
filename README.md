@@ -18,7 +18,7 @@ as `sudo` to ensure it will complete its task. It will copy `govm.sh` to
 `/usr/local/bin` under the name `govm` so it can be run, and will modify the
 environment to allow for Workspaces to function correctly.
 
-To ensure this, setup will append 3 lines to the `.profile` when it is run.
+To ensure this, the following 3 lines will be added to the `.5c6einit` file.
 
     export GOPATH="$HOME/go/current"
     export PATH="$HOME/.govm/current/bin:$PATH"
@@ -27,8 +27,11 @@ To ensure this, setup will append 3 lines to the `.profile` when it is run.
 These will allow for the required binaries to be called when `go` is invoked,
 and also add any binary modules fetched with `go get` to the `PATH`.
 
-Once the `setup.sh` script has run, restart your terminal for the updates to
-`PATH` to take effect.
+In order for these changes to take effect, please ensure that your profile file
+(`.zprofile`, `.bash_profile`, etc) executes the `.5c6einit` file.
+
+Once the `setup.sh` script has run, and the changes to your shell profile have
+been made, restart your terminal for the updates to `PATH` to take effect.
 
 ## Usage
 govm expects one of 4 commands, [`install`](#install), [`remove`](#remove),

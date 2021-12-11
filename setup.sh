@@ -28,11 +28,11 @@ fi
 infecho "copying govm.sh into /usr/local/bin/ as govm"
 cp ./govm.sh /usr/local/bin/govm
 
-# Append necessary lines to .profile to update PATH and GOPATH
+# Append necessary lines to .5c6einit to update PATH and GOPATH
 infecho "modifying .profile to update PATH and GOPATH"
-echo 'export GOPATH="$HOME/go/current"' >> "$HOME/.profile"
-echo 'export PATH="$HOME/.govm/current/bin:$PATH"' >> "$HOME/.profile"
-echo 'export PATH="$GOPATH/bin:$PATH"' >> "$HOME/.profile"
+echo 'export GOPATH="$HOME/go/current"' >> "$HOME/.5c6einit"
+echo 'export PATH="$HOME/.govm/current/bin:$PATH"' >> "$HOME/.5c6einit"
+echo 'export PATH="$GOPATH/bin:$PATH"' >> "$HOME/.5c6einit"
 
 # Notify the user that setup has completed
 sucecho "setup completed"
