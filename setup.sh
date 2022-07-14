@@ -33,10 +33,10 @@ home=$(eval echo "~$SUDO_USER")
 
 # Append necessary lines to .cvcinit to update PATH and GOPATH
 infecho "modifying .cvcinit to update PATH and GOPATH"
-touch "$HOME/.cvcinit"
-echo 'export GOPATH="$HOME/go/current"' >> "$HOME/.cvcinit"
-echo 'export PATH="$HOME/.govm/current/bin:$PATH"' >> "$HOME/.cvcinit"
-echo 'export PATH="$GOPATH/bin:$PATH"' >> "$HOME/.cvcinit"
+touch "$home/.cvcinit"
+echo 'export GOPATH="$HOME/go/current"' >> "$home/.cvcinit"
+echo 'export PATH="$HOME/.govm/current/bin:$PATH"' >> "$home/.cvcinit"
+echo 'export PATH="$GOPATH/bin:$PATH"' >> "$home/.cvcinit"
 
 # Notify the user that setup has completed
 sucecho "setup completed"
